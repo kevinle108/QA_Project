@@ -1,9 +1,14 @@
 # QA_Project
 
 ## Part 1: Test Plan
-Test website: 
+Subject: https://www.belk.com/
+Description: E-commerce site for department store. I stumbled on some bugs while randomly online shopping one day and thought it would make a good subject for a test plan.
 
-Test feature:
+Specific Example: https://www.belk.com/p/madison-slim-fit-dynamic-cooling-stretch-dress-shirt/320164011M0070.html?dwvar_320164011M0070_color=050330628212#start=1
+
+Test feature: Zoom feature on product image. 
+- When hovering over an image, a zoom window appears to the right of the image with a magnified view of the image.
+- When clicking on an image, a zoom popup box appears in the center of page.
 
 Test cases:
 
