@@ -1,10 +1,11 @@
 ## Test Plan
 ### Subject: https://www.belk.com/p/madison-slim-fit-dynamic-cooling-stretch-dress-shirt/320164011M0070.html?dwvar_320164011M0070_color=050330628212#start=1
-### Test Feature: Product Image Zoom
+Test Feature: 
+**Product Image Zoom**
 - When hovering over an image, a zoom window appears to the right of the image with a magnified view of the image
 - When clicking on an image, a zoom popup box appears in the center of page
 
-**Description:**
+### Description:
 
 https://www.belk.com/ is online shopping website for the department store, Belk. I discovered this site while randomly shopping online one day and thought it would make a good subject for a test plan since it had noticable bugs. This test plan applies to pretty much any product page on the site, but I used a specific example to make testing easier to follow. This test covers the functionality and usability of the Product Image Zoom when viewing on desktop browser. It does not cover testing on a mobile environment. 
 
