@@ -56,7 +56,10 @@ Clicking on the product image opens up a pop-up window containing the image and 
 ##### Actual Result:
 Same as expected.
 
---- 
+[zoom-on-click.webm](https://user-images.githubusercontent.com/54592360/194748347-7233daaa-5ea2-4310-8117-bdfad3e7bc5e.webm)
+
+---
+ 
 
 #### TC3: Zoom-On-Hover-Off-Bug
 
