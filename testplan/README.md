@@ -10,7 +10,7 @@ https://www.belk.com/p/madison-slim-fit-dynamic-cooling-stretch-dress-shirt/3201
 
 ### Description:
 
-https://www.belk.com/ is online shopping website for the department store, Belk. I discovered this site while randomly shopping online one day and thought it would make a good subject for a test plan since it had noticable bugs. This test plan applies to pretty much any product page on the site, but I used a specific example to make testing easier to follow. This test covers the functionality and usability of the Product Image Zoom when viewing on desktop browser. It does not cover testing on a mobile environment. 
+https://www.belk.com/ is online shopping website for the department store, Belk. I discovered this site while randomly shopping online one day and thought it would make a good subject for a test plan since it had noticable bugs. This test plan applies to pretty much any product page on the site, but I used a specific example to make testing easier to follow. This test covers the functionality and usability of the Product Image Zoom when viewing on desktop browser as well some regression and integration tests with the existing categories menu. It does not cover testing on a mobile environment. 
 
 ### Preconditions:
 Desktop web browser, live internet connection
