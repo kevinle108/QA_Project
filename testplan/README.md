@@ -12,8 +12,6 @@ https://www.belk.com/p/madison-slim-fit-dynamic-cooling-stretch-dress-shirt/3201
 
 https://www.belk.com/ is online shopping website for the department store, Belk. I discovered this site while randomly shopping online one day and thought it would make a good subject for a test plan since it had noticable bugs. This test plan applies to pretty much any product page on the site, but I used a specific example to make testing easier to follow. This test covers the functionality and usability of the Product Image Zoom when viewing on desktop browser. It does not cover testing on a mobile environment. 
 
-
-
 ### Preconditions:
 Desktop web browser, live internet connection
 
@@ -61,7 +59,6 @@ Same as expected.
 
 ---
  
-
 #### TC3: Zoom-On-Hover-Off-Bug
 
 Test type: functionality test, exploratory test
@@ -77,7 +74,6 @@ Test type: functionality test, exploratory test
 
 ##### Expected Result:
 The zoom window should disappear when the cursor is no longer hovering over the image
-
 
 ##### Actual Result:
 **BUG:** The zoom window flashes on and off when the cursor is off the image
@@ -121,7 +117,6 @@ Test type: functionality test
 5. Click the zoom-in button "+" again
 6. Once again drag over the image
 
-
 ##### Expected Result:
 Dragging over the image with the cursor moves the magnified view respective to the drag direction
 
@@ -132,4 +127,23 @@ Same as expected.
 
 ---
 
+#### TC6: Zoom-On-Click-Scroll
+
+Test type: functionality test
+
+##### Steps:
+1. Go to subject link
+2. Click on the largest product image with cursor to reveal the zoom pop-up
+3. Hover over the pop-up and scroll up and down
+4. Hover outside of the pop-up and scroll up and down the page
+
+##### Expected Result:
+Scrolling only moves the pop-up since it is the foreground object. Scrolling should be disabled for the rest of the page.
+
+##### Actual Result:
+Same as expected.
+
+[zoom-click-scroll.webm](https://user-images.githubusercontent.com/54592360/194750186-39246b2d-c3be-4d2b-9fc7-538b9bc5f1fc.webm)
+
+---
 
