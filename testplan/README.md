@@ -25,7 +25,7 @@ https://www.belk.com/p/madison-slim-fit-dynamic-cooling-stretch-dress-shirt/3201
 
 #### TC1: Zoom-On-Hover
 
-Test type: functionality test
+Type: functionality test
 
 ##### Steps:
  1. Go to subject link
@@ -44,7 +44,7 @@ Test type: functionality test
 
 #### TC2: Zoom-On-Click
 
-Test type: functionality test
+Type: functionality test
 
 ##### Steps:
 1. Go to subject link
@@ -62,7 +62,7 @@ Same as expected.
  
 #### TC3: Zoom-On-Hover-Off-Bug
 
-Test type: functionality test, exploratory test
+Type: functionality test, exploratory test
 
 ##### Steps:
 1. Go to subject link
@@ -85,7 +85,7 @@ https://user-images.githubusercontent.com/54592360/194747709-b41d4e61-fdab-46b3-
 
 #### TC4: Zoom-On-Click-Buttons-Work
 
-Test type: functionality test
+Type: functionality test
 
 ##### Steps:
 1. Go to subject link
@@ -108,7 +108,7 @@ Same as expected.
 
 #### TC5: Zoom-On-Click-Drag
 
-Test type: functionality test
+Type: functionality test
 
 ##### Steps:
 1. Go to subject link
@@ -130,7 +130,7 @@ Same as expected.
 
 #### TC6: Zoom-Click-Scroll
 
-Test type: functionality test
+Type: functionality test
 
 ##### Steps:
 1. Go to subject link
@@ -150,7 +150,7 @@ Same as expected.
 
 #### TC7: Zoom-Hover-Scroll-Bug
 
-Test type: functionality test
+Type: functionality test
 
 ##### Steps:
 1. Go to subject link
@@ -169,7 +169,7 @@ The zoom window should match the portion of the image as it scrolls underneath t
 
 #### TC8: categories-menu-open
 
-Test type: regression test
+Type: regression test
 
 ##### Steps:
 1. Go to subject link
@@ -187,7 +187,7 @@ Same as expected.
 
 #### TC9: categories-menu-close
 
-Test type: regression test
+Type: regression test
 
 ##### Steps:
 1. Go to subject link
@@ -207,7 +207,7 @@ The subcategories menu should disappear once the cursor is no longer hovering ov
 
 #### TC10: zoom-categories-bug
 
-Test type: integration test (b/w Zoom Feature & Categories Menu), exploratory test
+Type: integration test (b/w Zoom Feature & Categories Menu), exploratory test
 
 ##### Steps:
 1. Go to subject link
