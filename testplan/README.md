@@ -9,7 +9,7 @@ https://www.belk.com/ is online shopping website for the department store, Belk.
 - When hovering over an image, a zoom window appears to the right of the image with a magnified view of the image: ![zoom-on-hover](https://user-images.githubusercontent.com/54592360/194744557-5ef71775-0304-47f2-b794-3ecacbb6eeff.gif)
 - When clicking on an image, a zoom popup box appears in the center of page: ![zoom-on-click](https://user-images.githubusercontent.com/54592360/194744586-873dd11c-29b6-423e-815c-7ebb1e8aabc3.gif)
 
-Test Environment: 
+### Test Environment: 
 OS: Windows 10 Home Edition, Version 21H1, Build: 19043.2006
 
 Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
