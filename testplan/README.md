@@ -22,8 +22,6 @@ OS: Windows 10 Home Edition, Version 21H1, Build: 19043.2006
 
 Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
 
---- 
-
 ## Test cases:
 
 #### TC1: Zoom-On-Hover
