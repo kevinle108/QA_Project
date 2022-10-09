@@ -198,7 +198,7 @@ Test type: regression test
 The subcategories menu should disappear once the cursor is no longer hovering over any categories or subcategories
 
 ##### Actual Result:
-Unless this is by design, the menu remains open even though the cursor moved off. It only closes when the user clicks outside the menu. Hard to say if this is a bug or not without knowing the requirement specs for this feature. Since the menu opens with hover-on, it is more intuitive if it also closes with hover-off. For reference, see https://www.homedepot.com/. 
+**BUG?** Unless this is by design, the menu remains open even though the cursor moved off. It only closes when the user clicks outside the menu. Hard to say if this is a bug or not without knowing the requirement specs for this feature. Since the menu opens with hover-on, it is more intuitive if it also closes with hover-off. For reference, see https://www.homedepot.com/. 
 
 [categories-menu-close.webm](https://user-images.githubusercontent.com/54592360/194751914-db43adb3-4706-44d9-bf7e-b3f01f3ccc81.webm)
 
@@ -206,21 +206,22 @@ Unless this is by design, the menu remains open even though the cursor moved off
 
 #### TC10: zoom-categories-bug
 
-Test type: integration test (b/w Zoom Feature & Categories Menu)
+Test type: integration test (b/w Zoom Feature & Categories Menu), exploratory test
 
 ##### Steps:
 1. Go to subject link
-2. Hover over an item in the categories menu to reveal the subcategories menu
-3. Hover off the menu
-4. Click off the menu
+2. Set browser zoom to 75%
+4. Hover over an item in the categories menu to reveal the subcategories menu
+5. Hover over the product image to reveal the zoom window
+6. Scroll up and down the page
 
 ##### Expected Result:
-The subcategories menu should disappear once the cursor is no longer hovering over any categories or subcategories
+The zoom window should not appear if the categories menu is open
 
 ##### Actual Result:
-Unless this is by design, the menu remains open even though the cursor moved off. It only closes when the user clicks outside the menu. Hard to say if this is a bug or not without knowing the requirement specs for this feature. Since the menu opens with hover-on, it is more intuitive if it also closes with hover-off. For reference, see https://www.homedepot.com/. 
+**BUG** The zoom window appears and sit on top of the opened categories menu, blocking some of the subcategories from being in view
 
-[categories-menu-close.webm](https://user-images.githubusercontent.com/54592360/194751914-db43adb3-4706-44d9-bf7e-b3f01f3ccc81.webm)
+[zoom-categories-bug.webm](https://user-images.githubusercontent.com/54592360/194752500-5ed7cde2-71ec-4734-aaee-92b8486a74bd.webm)
 
 ---
 
