@@ -7,8 +7,8 @@ Description: E-commerce site for department store. I stumbled on some bugs while
 Specific Example: https://www.belk.com/p/madison-slim-fit-dynamic-cooling-stretch-dress-shirt/320164011M0070.html?dwvar_320164011M0070_color=050330628212#start=1
 
 Test feature: Zoom feature on product image. 
-- When hovering over an image, a zoom window appears to the right of the image with a magnified view of the image.
-- When clicking on an image, a zoom popup box appears in the center of page.
+- When hovering over an image, a zoom window appears to the right of the image with a magnified view of the image: ![zoom-on-hover](https://user-images.githubusercontent.com/54592360/194744557-5ef71775-0304-47f2-b794-3ecacbb6eeff.gif)
+- When clicking on an image, a zoom popup box appears in the center of page: ![zoom-on-click](https://user-images.githubusercontent.com/54592360/194744586-873dd11c-29b6-423e-815c-7ebb1e8aabc3.gif)
 
 Test cases:
 
