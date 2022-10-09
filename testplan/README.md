@@ -17,39 +17,66 @@ Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
 
 --- 
 
-### Test cases:
+## Test cases:
 
 #### TC1: Zoom-On-Hover
 
-Steps:
+Test type: functionality test
+
+##### Steps:
 1. Go to subject link
-2. Hover over product image with cursor
+2. Hover over the largest product image with cursor
 
-Expected Result:
-
+##### Expected Result:
 Hovering over a product image reveals a zoom window that appears to the right. The zoom window shows a magnified view of the image that tracks along with the cursor.
 
-Actual Result:
-
+##### Actual Result:
 Same as expected.
 
-#### 2. Clicking on photo pulls up a dialog box that has the photo magnified
+--- 
 
-#### 3. Bug: Flashing zoom window when hover on and off of photo (see video)
+#### TC2: Zoom-On-Click
+
+Test type: functionality test
+
+##### Steps:
+1. Go to subject link
+2. Click on the largest product image with cursor
+
+##### Expected Result:
+Clicking on the product image opens up a pop-up window containing the image and buttons for zoom-in, zoom-out, and exit. 
+
+##### Actual Result:
+Same as expected.
+
+--- 
+
+#### TC3: Zoom-On-Hover-Off **Bug Found**
+
+Test type: functionality test, exploratory test
+
+##### Steps:
+1. Go to subject link
+2. Click on largest product image to reveal the zoom pop-up window
+3. Click off of the pop-up window to close it
+4. Click on the bottom thumbnail located on the left side of the active image
+5. Hover over the active image to reveal the zoom window to the right
+6. Move cursor to the bottom and off of the image
+
+##### Expected Result:
+The zoom window should disappear when the cursor is no longer hovering over the image
+
+
+##### Actual Result:
+The zoom window flashes on and off when the cursor is off the image
+https://user-images.githubusercontent.com/54592360/194747709-b41d4e61-fdab-46b3-a485-165f4ca05f12.mp4
+
 
 ![bug-flashing-zoom-box](https://user-images.githubusercontent.com/54592360/194718354-3367b707-b2a7-4e53-af91-06727e6a2247.gif)
 
-#### 4.
+--- 
 
-#### 5.
+#### 3. Bug: Flashing zoom window when hover on and off of photo (see video)
 
-#### 6.
 
-#### 7. 
-
-#### 8.
-
-#### 9.
-
-#### 10.
 
