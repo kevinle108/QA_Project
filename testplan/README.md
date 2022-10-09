@@ -31,9 +31,10 @@ Test type: functionality test
 ##### Steps:
 1. Go to subject link
 2. Hover over the largest product image with cursor
+3. Hover off of the image
 
 ##### Expected Result:
-Hovering over a product image reveals a zoom window that appears to the right. The zoom window shows a magnified view of the image that tracks along with the cursor.
+Hovering over a product image reveals a zoom window that appears to the right. The zoom window shows a magnified view of the image that tracks along with the cursor. The zoom window disappears once the cursor hovers off the image.
 
 ##### Actual Result:
 Same as expected.
