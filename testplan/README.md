@@ -166,3 +166,40 @@ The zoom window should match the portion of the image as it scrolls underneath t
 
 ---
 
+#### TC8: categories-menu-open
+
+Test type: regression test
+
+##### Steps:
+1. Go to subject link
+2. Hover over an item in the categories menu "Women, Men, Kids, Shoes..."
+
+##### Expected Result:
+The categories menu opens to reveal the subcategories based on whatever menu item is selected.
+
+##### Actual Result:
+Same as expected.
+
+[categories-menu-open.webm](https://user-images.githubusercontent.com/54592360/194751165-e208a88b-9f83-4f90-8fc7-f4004b5639c1.webm)
+
+---
+
+#### TC9: categories-menu-close
+
+Test type: regression test
+
+##### Steps:
+1. Go to subject link
+2. Hover over an item in the categories menu to reveal the subcategories menu
+3. Hover off the menu
+
+##### Expected Result:
+The subcategories menu should disappear once the cursor is no longer hovering over any categories or subcategories
+
+##### Actual Result:
+Unless this is by design, the menu remains open even though the cursor moved off. It only closes when the user clicks outside the menu. Hard to say if this is a bug or not without knowing the requirement specs for this feature. Since the menu opens with hover-on, it is more intuitive if it also closes with hover-off. For reference, see https://www.homedepot.com/. 
+
+[categories-menu-close.webm](https://user-images.githubusercontent.com/54592360/194751914-db43adb3-4706-44d9-bf7e-b3f01f3ccc81.webm)
+
+---
+
