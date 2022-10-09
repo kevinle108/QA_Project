@@ -1,5 +1,3 @@
-# QA_Project
-
 ## Test Plan
 ### Subject: https://www.belk.com/p/madison-slim-fit-dynamic-cooling-stretch-dress-shirt/320164011M0070.html?dwvar_320164011M0070_color=050330628212#start=1
 
@@ -16,7 +14,7 @@ Desktop web browser, live internet connection
 OS: Windows 10 Home Edition, Version 21H1, Build: 19043.2006
 
 Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
-
+--- 
 ### Test cases:
 
 #### TC1: Zoom-On-Hover
