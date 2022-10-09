@@ -57,11 +57,12 @@ Test type: functionality test, exploratory test
 
 ##### Steps:
 1. Go to subject link
-2. Click on largest product image to reveal the zoom pop-up window
-3. Click off of the pop-up window to close it
-4. Click on the bottom thumbnail located on the left side of the active image
-5. Hover over the active image to reveal the zoom window to the right
-6. Move cursor to the bottom and off of the image
+2. Set browser zoom to 75%
+3. Click on largest product image to reveal the zoom pop-up window
+4. Click off of the pop-up window to close it
+5. Click on the bottom thumbnail located on the left side of the active image
+6. Hover over the active image to reveal the zoom window to the right
+7. Move cursor to the bottom and off of the image
 
 ##### Expected Result:
 The zoom window should disappear when the cursor is no longer hovering over the image
@@ -69,6 +70,7 @@ The zoom window should disappear when the cursor is no longer hovering over the 
 
 ##### Actual Result:
 The zoom window flashes on and off when the cursor is off the image
+
 https://user-images.githubusercontent.com/54592360/194747709-b41d4e61-fdab-46b3-a485-165f4ca05f12.mp4
 
 
