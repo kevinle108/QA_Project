@@ -10,7 +10,7 @@ https://www.belk.com/p/madison-slim-fit-dynamic-cooling-stretch-dress-shirt/3201
 
 ### Description:
 
-https://www.belk.com/ is online shopping website for the department store, Belk. I discovered this site and its noticable bugs while randomly shopping online one day and thought it would make a good subject for a test plan. This test plan applies to pretty much any product page on the belk.com website, but I used a specific product to make testing easier to follow. This test covers the functionality and usability of the Product Image Zoom feature when viewing on desktop browser as well some regression and integration tests with the existing Categories Menu feature. It does not cover testing on a mobile environment. 
+ https://www.belk.com/ is online shopping website for the department store, Belk. I discovered this site and its noticable bugs while randomly shopping online one day and thought it would make a good subject for a test plan. This test plan applies to pretty much any product page on the belk.com website, but I used a specific product to make testing easier to follow. This test covers the functionality and usability of the Product Image Zoom feature when viewing on desktop browser as well some regression and integration tests with the existing Categories Menu feature. It does not cover testing on a mobile environment. 
 
 ### Preconditions:
 - Desktop web browser, live internet connection
@@ -32,10 +32,10 @@ Test type: functionality test
  3. Hover off of the image
 
 ##### Expected Result:
-Hovering over a product image reveals a zoom window that appears to the right. The zoom window shows a magnified view of the image that tracks along with the cursor. The zoom window disappears once the cursor hovers off the image.
+  Hovering over a product image reveals a zoom window that appears to the right. The zoom window shows a magnified view of the image that tracks along with the cursor. The zoom window disappears once the cursor hovers off the image.
 
 ##### Actual Result:
-Same as expected.
+  Same as expected.
 
 [zoom-on-hover.webm](https://user-images.githubusercontent.com/54592360/194748045-f028ce33-bc47-4927-bc56-53c4dc3cc12a.webm)
 
