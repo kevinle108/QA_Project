@@ -79,7 +79,7 @@ The zoom window should disappear when the cursor is no longer hovering over the 
 
 
 ##### Actual Result:
-The zoom window flashes on and off when the cursor is off the image
+**BUG:** The zoom window flashes on and off when the cursor is off the image
 
 https://user-images.githubusercontent.com/54592360/194747709-b41d4e61-fdab-46b3-a485-165f4ca05f12.mp4
 
@@ -92,8 +92,8 @@ Test type: functionality test
 ##### Steps:
 1. Go to subject link
 2. Click on the largest product image with cursor to reveal the zoom pop-up
-3. Click the zoom-in button
-4. Click the zoom-out button
+3. Click the zoom-in button "+"
+4. Click the zoom-out button "-"
 5. Click the next arrow button ">"
 6. Click the previous arrow button "<"
 7. Click the exit pop-up button "X" 
@@ -106,7 +106,29 @@ Same as expected.
 
 [zoom-on-click-buttons-work.webm](https://user-images.githubusercontent.com/54592360/194748962-c25f52c1-29f9-4542-88de-62e1ab40ccf5.webm)
 
-
 --- 
+
+#### TC5: Zoom-On-Click-Drag
+
+Test type: functionality test
+
+##### Steps:
+1. Go to subject link
+2. Click on the largest product image with cursor to reveal the zoom pop-up
+3. Click the zoom-in button "+"
+4. Drag the cursor over the image in all four directions: up, down, left, and right
+5. Click the zoom-in button "+" again
+6. Once again drag over the image
+
+
+##### Expected Result:
+Dragging over the image with the cursor moves the magnified view respective to the drag direction
+
+##### Actual Result:
+Same as expected.
+
+[zoom-on-click-drag.webm](https://user-images.githubusercontent.com/54592360/194749385-fb72fac3-5148-4c0e-ae8e-900aaafcb16c.webm)
+
+---
 
 
