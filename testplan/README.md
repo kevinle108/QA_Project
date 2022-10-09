@@ -13,12 +13,12 @@ https://www.belk.com/p/madison-slim-fit-dynamic-cooling-stretch-dress-shirt/3201
 https://www.belk.com/ is online shopping website for the department store, Belk. I discovered this site and its noticable bugs while randomly shopping online one day and thought it would make a good subject for a test plan. This test plan applies to pretty much any product page on the belk.com website, but I used a specific product to make testing easier to follow. This test covers the functionality and usability of the Product Image Zoom feature when viewing on desktop browser as well some regression and integration tests with the existing Categories Menu feature. It does not cover testing on a mobile environment. 
 
 ### Preconditions:
-Desktop web browser, live internet connection
+- Desktop web browser, live internet connection
 
 ### Test Environment Used: 
-OS: Windows 10 Home Edition, Version 21H1, Build: 19043.2006
+- OS: Windows 10 Home Edition, Version 21H1, Build: 19043.2006
 
-Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
+- Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
 
 ## Test cases:
 
@@ -27,9 +27,9 @@ Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
 Test type: functionality test
 
 ##### Steps:
-1. Go to subject link
-2. Hover over the largest product image with cursor
-3. Hover off of the image
+- 1. Go to subject link
+- 2. Hover over the largest product image with cursor
+- 3. Hover off of the image
 
 ##### Expected Result:
 Hovering over a product image reveals a zoom window that appears to the right. The zoom window shows a magnified view of the image that tracks along with the cursor. The zoom window disappears once the cursor hovers off the image.
