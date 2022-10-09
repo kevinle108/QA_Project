@@ -11,35 +11,29 @@ https://www.belk.com/ is online shopping website for the department store, Belk.
 
 ### Test Environment: 
 OS: Windows 10 Home Edition, Version 21H1, Build: 19043.2006
-
 Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
 
-Test cases:
+### Test cases:
 
-### 1. Hover over photo pull ups a zoom window to the right with the photo magnified
+#### 1. Hover over photo pull ups a zoom window to the right with the photo magnified
 
-### 2. Clicking on photo pulls up a dialog box that has the photo magnified
+#### 2. Clicking on photo pulls up a dialog box that has the photo magnified
 
-### 3. Bug: Flashing zoom window when hover on and off of photo (see video)
+#### 3. Bug: Flashing zoom window when hover on and off of photo (see video)
 
 ![bug-flashing-zoom-box](https://user-images.githubusercontent.com/54592360/194718354-3367b707-b2a7-4e53-af91-06727e6a2247.gif)
 
-### 4.
+#### 4.
 
-### 5.
+#### 5.
 
-### 6.
+#### 6.
 
-### 7. 
+#### 7. 
 
-### 8.
+#### 8.
 
-### 9.
+#### 9.
 
-### 10.
+#### 10.
 
-
-## Part 2: Manual Test Execution
-
-
-## Part 3: Unit Test Creation
