@@ -48,7 +48,7 @@ Test type: functionality test
 
 ##### Steps:
 1. Go to subject link
-2. Click on the largest product image with cursor
+2. Click on the largest product image with cursor 
 
 ##### Expected Result:
 Clicking on the product image opens up a pop-up window containing the image and buttons for zoom-in, zoom-out, and exit. 
@@ -85,7 +85,28 @@ https://user-images.githubusercontent.com/54592360/194747709-b41d4e61-fdab-46b3-
 
 --- 
 
-#### 3. Bug: Flashing zoom window when hover on and off of photo (see video)
+#### TC4: Zoom-On-Click-Buttons-Work
 
+Test type: functionality test
+
+##### Steps:
+1. Go to subject link
+2. Click on the largest product image with cursor to reveal the zoom pop-up
+3. Click the zoom-in button
+4. Click the zoom-out button
+5. Click the next arrow button ">"
+6. Click the previous arrow button "<"
+7. Click the exit pop-up button "X" 
+
+##### Expected Result:
+Zoom-in button magnifies a portion the image while zoom-out does the opposite. Next button goes to the next image (if available) while previous button does the opposite. Exit button closes the zoom pop-up.
+
+##### Actual Result:
+Same as expected.
+
+[zoom-on-click-buttons-work.webm](https://user-images.githubusercontent.com/54592360/194748962-c25f52c1-29f9-4542-88de-62e1ab40ccf5.webm)
+
+
+--- 
 
 
