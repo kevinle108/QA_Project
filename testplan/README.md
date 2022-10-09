@@ -192,6 +192,27 @@ Test type: regression test
 1. Go to subject link
 2. Hover over an item in the categories menu to reveal the subcategories menu
 3. Hover off the menu
+4. Click off the menu
+
+##### Expected Result:
+The subcategories menu should disappear once the cursor is no longer hovering over any categories or subcategories
+
+##### Actual Result:
+Unless this is by design, the menu remains open even though the cursor moved off. It only closes when the user clicks outside the menu. Hard to say if this is a bug or not without knowing the requirement specs for this feature. Since the menu opens with hover-on, it is more intuitive if it also closes with hover-off. For reference, see https://www.homedepot.com/. 
+
+[categories-menu-close.webm](https://user-images.githubusercontent.com/54592360/194751914-db43adb3-4706-44d9-bf7e-b3f01f3ccc81.webm)
+
+---
+
+#### TC10: zoom-categories-bug
+
+Test type: integration test (b/w Zoom Feature & Categories Menu)
+
+##### Steps:
+1. Go to subject link
+2. Hover over an item in the categories menu to reveal the subcategories menu
+3. Hover off the menu
+4. Click off the menu
 
 ##### Expected Result:
 The subcategories menu should disappear once the cursor is no longer hovering over any categories or subcategories
