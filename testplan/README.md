@@ -33,7 +33,9 @@ Hovering over a product image reveals a zoom window that appears to the right. T
 ##### Actual Result:
 Same as expected.
 
---- 
+[zoom-on-hover.webm](https://user-images.githubusercontent.com/54592360/194748045-f028ce33-bc47-4927-bc56-53c4dc3cc12a.webm)
+
+---
 
 #### TC2: Zoom-On-Click
 
@@ -51,7 +53,7 @@ Same as expected.
 
 --- 
 
-#### TC3: Zoom-On-Hover-Off **Bug Found**
+#### TC3: Zoom-On-Hover-Off-Bug
 
 Test type: functionality test, exploratory test
 
@@ -72,9 +74,6 @@ The zoom window should disappear when the cursor is no longer hovering over the 
 The zoom window flashes on and off when the cursor is off the image
 
 https://user-images.githubusercontent.com/54592360/194747709-b41d4e61-fdab-46b3-a485-165f4ca05f12.mp4
-
-
-![bug-flashing-zoom-box](https://user-images.githubusercontent.com/54592360/194718354-3367b707-b2a7-4e53-af91-06727e6a2247.gif)
 
 --- 
 
