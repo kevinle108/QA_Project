@@ -127,7 +127,7 @@ Same as expected.
 
 ---
 
-#### TC6: Zoom-On-Click-Scroll
+#### TC6: Zoom-Click-Scroll
 
 Test type: functionality test
 
@@ -144,6 +144,25 @@ Scrolling only moves the pop-up since it is the foreground object. Scrolling sho
 Same as expected.
 
 [zoom-click-scroll.webm](https://user-images.githubusercontent.com/54592360/194750186-39246b2d-c3be-4d2b-9fc7-538b9bc5f1fc.webm)
+
+---
+
+#### TC7: Zoom-Hover-Scroll-Bug
+
+Test type: functionality test
+
+##### Steps:
+1. Go to subject link
+2. Hover over largest product image with cursor to reveal the zoom window to the right
+3. Scroll up and down the page while still hovering over the image
+
+##### Expected Result:
+The zoom window should match the portion of the image as it scrolls underneath the sticky nagivation bar 
+
+##### Actual Result:
+**Bug:** The zoom window presists fully and blocks contents of the navigation bar when scrolling down the page with the cursor over the image.
+
+[zoom-hover-scroll-bug.webm](https://user-images.githubusercontent.com/54592360/194750736-18f65669-fc27-4307-9dd2-5445c80b899c.webm)
 
 ---
 
