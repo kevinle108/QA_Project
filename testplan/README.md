@@ -24,8 +24,10 @@ Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
 Steps:
 1. Go to subject link
 2. Hover over product image with cursor
+
 Expected Result:
 Hovering over a product image reveals a zoom window that appears to the right. The zoom window shows a magnified view of the image that tracks along with the cursor.
+
 Actual Result:
 Same as expected.
 
