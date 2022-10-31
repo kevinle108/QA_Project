@@ -34,7 +34,7 @@ namespace CodeLouisvilleUnitTestProject
         /// <exception cref="ArgumentException">Thrown if no CargoItem in the Cargo matches the passed name</exception>
         public CargoItem UnloadCargo(string name)
         {
-            var item = Cargo.FirstOrDefault()
+            var item = Cargo.FirstOrDefault();
         }
 
         /// <summary>
