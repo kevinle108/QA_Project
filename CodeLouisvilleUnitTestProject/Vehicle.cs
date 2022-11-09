@@ -8,7 +8,7 @@
         public double MilesPerGallon { get; set; }
         public double GasTankCapacity { get; init; }
         public int NumberOfTires { get; init; }
-        public string GasLevel => $"{_gasRemaining / GasTankCapacity * 100}%";
+        public string GasLevel => $"{Math.Floor(_gasRemaining / GasTankCapacity * 100)}%";
         public double MilesRemaining => _gasRemaining * MilesPerGallon;
         public double Mileage => _mileage;
         #endregion
@@ -116,6 +116,13 @@
             }
         }
 
+        // added method to allow public access to ChangeTireAsync()
+        // (for testing purposes)
+        public async Task Test_ChangeTireAsync()
+        {
+            await ChangeTireAsync();
+        }
+
         /// <summary>
         /// Determine whether or not a flat tire after driving milesDrive miles based on flat tire chance and randomness
         /// </summary>
@@ -132,6 +139,13 @@
             Random randomNumberGenerator = new(rngSeed);
             double rand = randomNumberGenerator.NextDouble();
             return rand < probabilityOfFlatThisTrip;
+        }
+
+        // added method for inducing a flat tire
+        // (for testing purposes)
+        public void Test_InduceFlatTire()
+        {
+            _hasFlatTire = true;
         }
     }
 }

@@ -127,7 +127,7 @@ namespace CodeLouisvilleUnitTestProjectTests
          *      correct. Verify that the status reports the car is out of gas.
         */
 
-         //a.Attempting to drive a car without gas returns the status string “Cannot drive, out of gas.”.
+        //a. Attempting to drive a car without gas returns the status string “Cannot drive, out of gas.”.
         [Fact]
         public void DriveCarWithNoGas()
         {
@@ -138,31 +138,103 @@ namespace CodeLouisvilleUnitTestProjectTests
             status.Should().Be("Cannot drive, out of gas.");
         }
 
-
-
-        [Theory]
-        [InlineData("MysteryParamValue")]
-        public void DriveNegativeTests(params object[] yourParamsHere)
+        //b. Attempting to drive a car with a flat tire returns the status string “Cannot drive due to flat tire.”.
+        [Fact]
+        public void DriveCarWithFlatTire()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
+            Vehicle vehicle = new Vehicle(4, 10, "Toyota", "Camry", 30);
 
-            //assert
+            vehicle.AddGas();
+            vehicle.Test_InduceFlatTire();
+            string status = vehicle.Drive(10);
 
+            status.Should().Be("Cannot drive due to flat tire.");
         }
 
-        [Theory]
-        [InlineData("MysteryParamValue")]
-        public void DrivePositiveTests(params object[] yourParamsHere)
+        // c.Drive the car 10 miles.Verify that the correct amount
+        // of gas was used, that the correct distance was traveled,
+        // that GasLevel is correct, that MilesRemaining is correct, 
+        // and that the total mileage on the vehicle is correct.
+        [Fact]
+        public void DriveCarCertainDistance_10()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
+            Vehicle vehicle = new Vehicle(4, 10, "Toyota", "Camry", 30);
+            vehicle.AddGas();
+            string status = vehicle.Drive(10);
 
-            //assert
-
+            using (new AssertionScope())
+            {
+                status.Should().Be("Drove 10 miles using 0.33 gallons of gas.");
+                vehicle.GasLevel.Should().Be("96%"); //changed GasLevel to round down to nearest int
+                vehicle.MilesRemaining.Should().Be(290);
+                vehicle.Mileage.Should().Be(10);
+            }
         }
+
+        // d.Drive the car 100 miles.Verify that the correct amount
+        // of gas was used, that the correct distance was traveled,
+        // that GasLevel is correct, that MilesRemaining is correct, 
+        // and that the total mileage on the vehicle is correct.
+        [Fact]
+        public void DriveCarCertainDistance_100()
+        {
+            Vehicle vehicle = new Vehicle(4, 10, "Toyota", "Camry", 30);
+            vehicle.AddGas();
+            string status = vehicle.Drive(100);
+
+            using (new AssertionScope())
+            {
+                status.Should().Be("Drove 100 miles using 3.33 gallons of gas.");
+                vehicle.GasLevel.Should().Be("66%"); 
+                vehicle.MilesRemaining.Should().BeApproximately(200, 0.01);
+                vehicle.Mileage.Should().Be(100);
+            }
+        }
+
+        // d.Drive the car until it runs out of gas. Verify that the 
+        // correct amount of gas was used, that the correct distance
+        // was traveled, that GasLevel is correct, that MilesRemaining
+        // is correct, and that the total mileage on the vehicle is 
+        // correct.Verify that the status reports the car is out of gas.
+        [Fact]
+        public void DriveCarToRunOutOfGas()
+        {
+            Vehicle vehicle = new Vehicle(4, 10, "Toyota", "Camry", 30);
+            vehicle.AddGas();
+            string status = vehicle.Drive(300);
+
+            using (new AssertionScope())
+            {
+                status.Should().Contain("Drove 300 miles, then ran out of gas.");
+                vehicle.GasLevel.Should().Be("0%"); //changed GasLevel to round down to nearest int
+                vehicle.MilesRemaining.Should().Be(0);
+                vehicle.Mileage.Should().Be(300);
+            }
+        }
+
+        //[Theory]
+        //[InlineData("MysteryParamValue")]
+        //public void DriveNegativeTests(params object[] yourParamsHere)
+        //{
+        //    //arrange
+        //    throw new NotImplementedException();
+        //    //act
+
+        //    //assert
+
+        //}
+
+        //[Theory]
+        //[InlineData("MysteryParamValue")]
+        //public void DrivePositiveTests(params object[] yourParamsHere)
+        //{
+        //    //arrange
+        //    throw new NotImplementedException();
+        //    //act
+
+        //    //assert
+
+        //}
 
         //Verify that attempting to change a flat tire using
         //ChangeTireAsync will throw a NoTireToChangeException
@@ -170,12 +242,12 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public async Task ChangeTireWithoutFlatTest()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
+            Vehicle vehicle = new Vehicle(4, 10, "Toyota", "Camry", 30);
 
-            //assert
+            // added test method to Vehicle class
+            Func<Task> act = async () => { await vehicle.Test_ChangeTireAsync(); };
 
+            await act.Should().ThrowAsync<NoTireToChangeException>();
         }
 
         //Verify that ChangeTireAsync can successfully
