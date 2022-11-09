@@ -14,12 +14,17 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void VehicleParameterlessConstructorTest()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
+            Vehicle vehicle = new Vehicle();
 
-            //assert
-
+            using (new AssertionScope())
+            {
+                vehicle.Should().NotBeNull();
+                vehicle.NumberOfTires.Should().Be(0);
+                vehicle.GasTankCapacity.Should().Be(0);
+                vehicle.Make.Should().Be("");
+                vehicle.Model.Should().Be("");
+                vehicle.MilesPerGallon.Should().Be(0);
+            }
         }
 
         //Verify the parameterized constructor successfully creates a new
@@ -28,11 +33,17 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void VehicleConstructorTest()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
+            Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Avalon", 30);
 
-            //assert
+            using (new AssertionScope())
+            {
+                vehicle.Should().NotBeNull();
+                vehicle.NumberOfTires.Should().Be(4);
+                vehicle.GasTankCapacity.Should().Be(15);
+                vehicle.Make.Should().Be("Toyota");
+                vehicle.Model.Should().Be("Avalon");
+                vehicle.MilesPerGallon.Should().Be(30);
+            }
 
         }
 
@@ -41,12 +52,12 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void AddGasParameterlessFillsGasToMax()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
+            Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Avalon", 30);
 
-            //assert
+            vehicle.Drive(30);
+            vehicle.AddGas();
 
+            vehicle.GasLevel.Should().Be("100%");
         }
 
         //Verify that the AddGas method with a parameter adds the
@@ -54,12 +65,12 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void AddGasWithParameterAddsSuppliedAmountOfGas()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
+            Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Avalon", 30);
 
-            //assert
+            vehicle.AddGas();
+            vehicle.Drive(90);
 
+            vehicle.GasLevel.Should().Be("80%");
         }
 
         //Verify that the AddGas method with a parameter will throw
@@ -67,27 +78,30 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void AddingTooMuchGasThrowsGasOverflowException()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
+            Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Avalon", 30);
 
-            //assert
+            Action act = () => vehicle.AddGas(16).Should();
 
+            act.Should().Throw<GasOverfillException>()
+                .WithMessage("Unable to add 16 gallons to tank because it would exceed the capacity of 15 gallons");
         }
 
         //Using a Theory (or data-driven test), verify that the GasLevel
         //property returns the correct percentage when the gas level is
         //at 0%, 25%, 50%, 75%, and 100%.
         [Theory]
-        [InlineData("MysteryParamValue")]
-        public void GasLevelPercentageIsCorrectForAmountOfGas(params object[] yourParamsHere)
+        [InlineData(0, "0%")]
+        [InlineData(2.5, "25%")]
+        [InlineData(5, "50%")]
+        [InlineData(7.5, "75%")]
+        [InlineData(10, "100%")]
+        public void GasLevelPercentageIsCorrectForAmountOfGas(float gasAmountToAdd, string gasLevel)
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
+            Vehicle vehicle = new Vehicle(4, 10, "Toyota", "Camry", 30);
 
-            //assert
+            vehicle.AddGas(gasAmountToAdd);
 
+            vehicle.GasLevel.Should().Be(gasLevel);
         }
 
         /*
@@ -112,6 +126,20 @@ namespace CodeLouisvilleUnitTestProjectTests
          *      is correct, and that the total mileage on the vehicle is 
          *      correct. Verify that the status reports the car is out of gas.
         */
+
+         //a.Attempting to drive a car without gas returns the status string “Cannot drive, out of gas.”.
+        [Fact]
+        public void DriveCarWithNoGas()
+        {
+            Vehicle vehicle = new Vehicle(4, 10, "Toyota", "Camry", 30);
+
+            string status = vehicle.Drive(10);
+
+            status.Should().Be("Cannot drive, out of gas.");
+        }
+
+
+
         [Theory]
         [InlineData("MysteryParamValue")]
         public void DriveNegativeTests(params object[] yourParamsHere)
