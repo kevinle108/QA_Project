@@ -255,26 +255,26 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public async Task ChangeTireSuccessfulTest()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
+            Vehicle vehicle = new Vehicle(4, 10, "Toyota", "Camry", 30);
 
-            //assert
+            vehicle.Test_InduceFlatTire();
+            await vehicle.Test_ChangeTireAsync();
 
+            vehicle.HasFlatTire.Should().Be(false);
         }
 
         //BONUS: Write a unit test that verifies that a flat
         //tire will occur after a certain number of miles.
-        [Theory]
-        [InlineData("MysteryParamValue")]
-        public void GetFlatTireAfterCertainNumberOfMilesTest(params object[] yourParamsHere)
-        {
-            //arrange
-            throw new NotImplementedException();
-            //act
+        //[Theory]
+        //[InlineData("MysteryParamValue")]
+        //public void GetFlatTireAfterCertainNumberOfMilesTest(params object[] yourParamsHere)
+        //{
+        //    //arrange
+        //    throw new NotImplementedException();
+        //    //act
 
-            //assert
+        //    //assert
 
-        }
+        //}
     }
 }

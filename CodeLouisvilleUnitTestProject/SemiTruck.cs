@@ -11,9 +11,9 @@ namespace CodeLouisvilleUnitTestProject
         /// <summary>
         /// Creates a new SemiTruck that always has 18 Tires
         /// </summary>
-        public SemiTruck()
+        public SemiTruck(double gasTankCapacity, string make, string model, double milesPerGallon)
+            : base(18, gasTankCapacity, make, model, milesPerGallon)
         {
-            NumberOfTires = 18;
             Cargo = new List<CargoItem>();
         }
 
@@ -34,8 +34,15 @@ namespace CodeLouisvilleUnitTestProject
         /// <exception cref="ArgumentException">Thrown if no CargoItem in the Cargo matches the passed name</exception>
         public CargoItem UnloadCargo(string name)
         {
-            // YOUR CODE HERE
-            throw new NotImplementedException();
+            var item = Cargo.FirstOrDefault(x => x.Name == name);
+            if (item != null)
+            {
+                Cargo.Remove(item);
+                return item;
+            } else
+            {
+                throw new ArgumentException($"Sorry, no {name} in cargo.");
+            }
         }
 
         /// <summary>
@@ -45,8 +52,7 @@ namespace CodeLouisvilleUnitTestProject
         /// <returns>A List of CargoItems with the exact name passed</returns>
         public List<CargoItem> GetCargoItemsByName(string name)
         {
-            //YOUR CODE HERE
-            throw new NotImplementedException();
+            return Cargo.FindAll(x => x.Name == name).ToList();
         }
 
         /// <summary>
@@ -56,8 +62,7 @@ namespace CodeLouisvilleUnitTestProject
         /// <returns>A List of CargoItems with a description containing the passed description</returns>
         public List<CargoItem> GetCargoItemsByPartialDescription(string description)
         {
-            //YOUR CODE HERE
-            throw new NotImplementedException();
+            return Cargo.FindAll(x => x.Description.Contains(description));
         }
 
         /// <summary>
@@ -66,8 +71,9 @@ namespace CodeLouisvilleUnitTestProject
         /// <returns>An integer representing the sum of all Quantity properties on all CargoItems</returns>
         public int GetTotalNumberOfItems()
         {
-            //YOUR CODE HERE
-            throw new NotImplementedException();
+            return Cargo.Sum(x => x.Quantity);
         }
     }
 }
+
+

@@ -11,6 +11,7 @@
         public string GasLevel => $"{Math.Floor(_gasRemaining / GasTankCapacity * 100)}%";
         public double MilesRemaining => _gasRemaining * MilesPerGallon;
         public double Mileage => _mileage;
+        public bool HasFlatTire => _hasFlatTire;
         #endregion
 
         #region Private Fields

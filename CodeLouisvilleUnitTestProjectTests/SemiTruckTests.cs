@@ -1,6 +1,7 @@
 ﻿using CodeLouisvilleUnitTestProject;
 using FluentAssertions;
 using FluentAssertions.Execution;
+using System.Diagnostics;
 
 namespace CodeLouisvilleUnitTestProjectTests
 {
@@ -14,12 +15,15 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void NewSemiTruckIsAVehicleAndHas18TiresAndEmptyCargoTest()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
+            var truck = new SemiTruck(150, "Volvo", "VNL", 5);
+            using (new AssertionScope())
+            {
+                truck.Should().BeOfType<SemiTruck>();
+                truck.Should().BeAssignableTo<Vehicle>();
+                truck.NumberOfTires.Should().Be(18);
+                truck.Cargo.Should().BeEmpty();
 
-            //assert
-            
+            } 
         }
 
         //Verify that adding a CargoItem using LoadCargo does successfully add
@@ -28,15 +32,20 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void LoadCargoTest()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
-
-            //assert
-
+            var cargo = new CargoItem();
+            cargo.Name = "TP";
+            cargo.Description = "Toilet Paper";
+            cargo.Quantity = 1000;
+            var truck = new SemiTruck(150, "Volvo", "VNL", 5);
+            truck.LoadCargo(cargo);
+            using (new AssertionScope())
+            {
+                truck.Cargo.Should().Contain(cargo);
+                truck.Cargo.Count.Should().Be(1);
+            }
         }
 
-        //Verify that unloading a  cargo item that is in the Cargo does
+        //Verify that unloading a cargo item that is in the Cargo does
         //remove it from the Cargo and return the matching CargoItem
         [Fact]
         public void UnloadCargoWithValidCargoTest()
