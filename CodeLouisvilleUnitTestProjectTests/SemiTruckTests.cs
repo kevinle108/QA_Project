@@ -6,7 +6,7 @@ using System.Diagnostics;
 namespace CodeLouisvilleUnitTestProjectTests
 {
     public class SemiTruckTests
-    {
+    {       
 
         //Verify that the SemiTruck constructor creates a new SemiTruck
         //object which is also a Vehicle and has 18 wheels. Verify that the
@@ -32,10 +32,7 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void LoadCargoTest()
         {
-            var cargo = new CargoItem();
-            cargo.Name = "TP";
-            cargo.Description = "Toilet Paper";
-            cargo.Quantity = 1000;
+            var cargo = new CargoItem("TP", "Toilet Paper", 1000);
             var truck = new SemiTruck(150, "Volvo", "VNL", 5);
             truck.LoadCargo(cargo);
             using (new AssertionScope())
@@ -50,12 +47,16 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void UnloadCargoWithValidCargoTest()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
-
-            //assert
-
+            var cargo = new CargoItem("TP", "Toilet Paper", 1000);
+            var truck = new SemiTruck(150, "Volvo", "VNL", 5);
+            truck.LoadCargo(cargo);
+            var result = truck.UnloadCargo("TP");
+            using (new AssertionScope())
+            {
+                truck.Cargo.Should().NotContain(cargo);
+                truck.Cargo.Count.Should().Be(0);
+                result.Should().Be(cargo);
+            }
         }
 
         //Verify that attempting to unload a CargoItem that does not
@@ -63,12 +64,10 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void UnloadCargoWithInvalidCargoTest()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
-
-            //assert
-
+            var cargo = new CargoItem("TP", "Toilet Paper", 1000);
+            var truck = new SemiTruck(150, "Volvo", "VNL", 5);
+            Action act = () => truck.UnloadCargo("TP");
+            act.Should().Throw<ArgumentException>();
         }
 
         //Verify that getting cargo items by name returns all items
@@ -76,25 +75,31 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void GetCargoItemsByNameWithValidName()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
-
-            //assert
-
+            var cargo1 = new CargoItem("TP", "Toilet Paper part 1", 1000);
+            var cargo2 = new CargoItem("TP", "Toilet Paper part 2", 1000);
+            var cargo3 = new CargoItem("Watch", "Casio Watches", 500);
+            var truck = new SemiTruck(150, "Volvo", "VNL", 5);
+            truck.LoadCargo(cargo1);
+            truck.LoadCargo(cargo2);
+            truck.LoadCargo(cargo3);
+            var result = truck.GetCargoItemsByName("TP");
+            result.Count.Should().Be(2);
         }
 
-        //Verify that searching the Carto list for an item that does not
+        //Verify that searching the Cargo list for an item that does not
         //exist returns an empty list
         [Fact]
         public void GetCargoItemsByNameWithInvalidName()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
-
-            //assert
-
+            var cargo1 = new CargoItem("TP", "Toilet Paper part 1", 1000);
+            var cargo2 = new CargoItem("TP", "Toilet Paper part 2", 1000);
+            var cargo3 = new CargoItem("Watch", "Casio Watches", 500);
+            var truck = new SemiTruck(150, "Volvo", "VNL", 5);
+            truck.LoadCargo(cargo1);
+            truck.LoadCargo(cargo2);
+            truck.LoadCargo(cargo3);
+            var result = truck.GetCargoItemsByName("Wood");
+            result.Should().BeEmpty();
         }
 
         //Verify that searching the Cargo list by description for an item
@@ -102,25 +107,31 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void GetCargoItemsByPartialDescriptionWithValidDescription()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
-
-            //assert
-
+            var cargo1 = new CargoItem("TP", "Toilet Paper part 1", 1000);
+            var cargo2 = new CargoItem("TP", "Toilet Paper part 2", 1000);
+            var cargo3 = new CargoItem("Watch", "Casio Watches", 500);
+            var truck = new SemiTruck(150, "Volvo", "VNL", 5);
+            truck.LoadCargo(cargo1);
+            truck.LoadCargo(cargo2);
+            truck.LoadCargo(cargo3);
+            var result = truck.GetCargoItemsByPartialDescription("Toilet");
+            result.Count.Should().Be(2);
         }
 
-        //Verify that searching the Carto list by description for an item
+        //Verify that searching the Cargo list by description for an item
         //that does not exist returns an empty list
         [Fact]
         public void GetCargoItemsByPartialDescriptionWithInvalidDescription()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
-
-            //assert
-
+            var cargo1 = new CargoItem("TP", "Toilet Paper part 1", 1000);
+            var cargo2 = new CargoItem("TP", "Toilet Paper part 2", 1000);
+            var cargo3 = new CargoItem("Watch", "Casio Watches", 500);
+            var truck = new SemiTruck(150, "Volvo", "VNL", 5);
+            truck.LoadCargo(cargo1);
+            truck.LoadCargo(cargo2);
+            truck.LoadCargo(cargo3);
+            var result = truck.GetCargoItemsByPartialDescription("Wood");
+            result.Should().BeEmpty();
         }
 
         //Verify that the method returns the sum of all quantities of all
@@ -128,11 +139,15 @@ namespace CodeLouisvilleUnitTestProjectTests
         [Fact]
         public void GetTotalNumberOfItemsReturnsSumOfAllQuantities()
         {
-            //arrange
-            throw new NotImplementedException();
-            //act
-
-            //assert
+            var cargo1 = new CargoItem("TP", "Toilet Paper part 1", 1000);
+            var cargo2 = new CargoItem("TP", "Toilet Paper part 2", 1000);
+            var cargo3 = new CargoItem("Watch", "Casio Watches", 500);
+            var truck = new SemiTruck(150, "Volvo", "VNL", 5);
+            truck.LoadCargo(cargo1);
+            truck.LoadCargo(cargo2);
+            truck.LoadCargo(cargo3);
+            var result = truck.GetTotalNumberOfItems();
+            result.Should().Be(2500);
 
         }
     }
