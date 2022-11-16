@@ -24,7 +24,7 @@ https://www.belk.com/ is online shopping website for the department store, Belk.
 ### Bug Found:
 - [TC3: Zoom-On-Hover-Off-Bug](#tc3-zoom-on-hover-off-bug)
 - [TC7: Zoom-Hover-Scroll-Bug](#tc7-zoom-hover-scroll-bug)
-- [TC9: Categories-Menu-Close (maybe a bug)](##tc9-categories-menu-close)
+- [TC9: Categories-Menu-Close](##tc9-categories-menu-close) (maybe a bug)
 - [TC10: Zoom-Categories-Bug](#tc10-zoom-categories-bug")
 
 Please review the test cases listed above to learn how to replicate these bugs. 
