@@ -22,9 +22,10 @@ https://www.belk.com/ is online shopping website for the department store, Belk.
 - Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
 
 ### Bug Found:
-- [TC3: Zoom-On-Hover-Off-Bug](#TC3:-Zoom-On-Hover-Off-Bug)
-- [TC7: Zoom-Hover-Scroll-Bug](#TC7:-Zoom-Hover-Scroll-Bug)
-- [TC10: Zoom-Categories-Bug](#TC10:-Zoom-Categories-Bug)
+- [TC3: Zoom-On-Hover-Off-Bug](#tc3-zoom-on-hover-off-bug)
+- [TC7: Zoom-Hover-Scroll-Bug](#tc7-zoom-hover-scroll-bug)
+- [TC9: Categories-Menu-Close (maybe bug)](##tc9-categories-menu-close)
+- [TC10: Zoom-Categories-Bug](#tc10-zoom-categories-bug")
 
 Please review the test cases listed above to learn how to replicate these bugs. 
 
@@ -174,7 +175,7 @@ The zoom window should match the portion of the image as it scrolls underneath t
 
 ---
 
-#### TC8: categories-menu-open
+#### TC8: Categories-Menu-Open
 
 Type: regression test
 
@@ -192,7 +193,7 @@ Same as expected.
 
 ---
 
-#### TC9: categories-menu-close
+#### TC9: Categories-Menu-Close
 
 Type: regression test
 
@@ -212,7 +213,7 @@ The subcategories menu should disappear once the cursor is no longer hovering ov
 
 ---
 
-#### TC10: zoom-categories-bug
+#### TC10: Zoom-Categories-Bug
 
 Type: integration test (b/w Zoom Feature & Categories Menu), exploratory test
 
