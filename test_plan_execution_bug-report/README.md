@@ -1,4 +1,4 @@
-## Test Plan & Execution
+## Test Plan, Execution, and Bug Report
 ### Subject: 
 
 https://www.belk.com/p/madison-slim-fit-dynamic-cooling-stretch-dress-shirt/320164011M0070.html?dwvar_320164011M0070_color=050330628212#start=1
@@ -20,6 +20,14 @@ https://www.belk.com/ is online shopping website for the department store, Belk.
 - OS: Windows 10 Home Edition, Version 21H1, Build: 19043.2006
 
 - Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
+
+### Bug Found:
+- [TC3: Zoom-On-Hover-Off-Bug](#tc3-zoom-on-hover-off-bug)
+- [TC7: Zoom-Hover-Scroll-Bug](#tc7-zoom-hover-scroll-bug)
+- [TC9: Categories-Menu-Close](##tc9-categories-menu-close) (maybe a bug)
+- [TC10: Zoom-Categories-Bug](#tc10-zoom-categories-bug")
+
+Please review the test cases listed above to learn how to replicate these bugs. 
 
 ## Test cases:
 
@@ -226,8 +234,3 @@ The zoom window should not appear if the categories menu is open
 
 ---
 
-## Bug Report:
-3 Bugs Found:
-- TC3: Zoom-On-Hover-Off-Bug
-- TC7: Zoom-Hover-Scroll-Bug
-- TC10: Zoom-Categories-Bug 
