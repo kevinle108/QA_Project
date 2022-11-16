@@ -135,7 +135,7 @@ namespace CodeLouisvilleUnitTestProjectTests
 
             string status = vehicle.Drive(10);
 
-            status.Should().Be("Cannot drive, out of gas.");
+            status.Should().Contain("Cannot drive, out of gas.");
         }
 
         //b. Attempting to drive a car with a flat tire returns the status string “Cannot drive due to flat tire.”.
@@ -147,8 +147,7 @@ namespace CodeLouisvilleUnitTestProjectTests
             vehicle.AddGas();
             vehicle.Test_InduceFlatTire();
             string status = vehicle.Drive(10);
-
-            status.Should().Be("Cannot drive due to flat tire.");
+            status.Should().Contain("Cannot drive due to flat tire.");
         }
 
         // c.Drive the car 10 miles.Verify that the correct amount
@@ -164,7 +163,7 @@ namespace CodeLouisvilleUnitTestProjectTests
 
             using (new AssertionScope())
             {
-                status.Should().Be("Drove 10 miles using 0.33 gallons of gas.");
+                status.Should().Contain("Drove 10 miles using 0.33 gallons of gas.");
                 vehicle.GasLevel.Should().Be("96%"); //changed GasLevel to round down to nearest int
                 vehicle.MilesRemaining.Should().Be(290);
                 vehicle.Mileage.Should().Be(10);
@@ -184,7 +183,7 @@ namespace CodeLouisvilleUnitTestProjectTests
 
             using (new AssertionScope())
             {
-                status.Should().Be("Drove 100 miles using 3.33 gallons of gas.");
+                status.Should().Contain("Drove 100 miles using 3.33 gallons of gas.");
                 vehicle.GasLevel.Should().Be("66%"); 
                 vehicle.MilesRemaining.Should().BeApproximately(200, 0.01);
                 vehicle.Mileage.Should().Be(100);
