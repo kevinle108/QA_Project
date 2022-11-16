@@ -71,6 +71,54 @@ namespace CodeLouisvilleUnitTestProjectTests
                 .WithMessage("Sorry, no data is available for years before 1995.");
         }
 
+        [Theory]
+        [InlineData(3, 30, 29.4)]
+        [InlineData(1, 30, 29.8)]
+        [InlineData(0, 30, 30)]
+        [InlineData(-1, 30, 30)]
+        public void AddPassengers(int passengers, double mpg, double expected)
+        {
+            var car = new Car(15, "Honda", "Civic", mpg);
+            car.AddPassengers(passengers);
+            car.MilesPerGallon.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(3, 30, 29.4)]
+        [InlineData(1, 30, 29.8)]
+        [InlineData(0, 30, 30)]
+        [InlineData(-1, 30, 30)]
+        public void AddPassengers_ThenRemove(int numToAdd, double mpg, double expected)
+        {
+            var car = new Car(15, "Honda", "Civic", mpg);
+            car.AddPassengers(numToAdd);
+            car.MilesPerGallon.Should().Be(expected);
+            
+            car.RemovePassengers(numToAdd);
+            car.MilesPerGallon.Should().Be(mpg);
+        }
+
+        [Theory]
+        [InlineData(5, 21, 3, 2, 20.6)]
+        [InlineData(5, 21, 5, 0, 21)]
+        [InlineData(5, 21, 25, 0, 21)]
+        public void RemovePassengers(int passengers, double mpg, int numToRemove, int expectedPassengers, double expectedMpg)
+        {
+            var car = new Car(15, "Honda", "Civic", mpg);
+            car.AddPassengers(passengers);
+            car.RemovePassengers(numToRemove);
+            using (new AssertionScope())
+            {
+                car.NumberOfPassengers.Should().Be(expectedPassengers);
+                car.MilesPerGallon.Should().Be(expectedMpg);
+            }
+        }
+
+
+
+
+
+
         //[Fact]
         //public async Task ChangeTireWithoutFlatTest()
         //{

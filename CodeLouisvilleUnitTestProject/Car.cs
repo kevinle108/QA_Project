@@ -17,7 +17,7 @@ namespace CodeLouisvilleUnitTestProject
             BaseAddress = new Uri("https://vpic.nhtsa.dot.gov/api/")
         };
 
-        public int NumberOfPassengers { get; }
+        public int NumberOfPassengers { get; private set; }
 
         public Car() 
             : this(0, "", "", 0)
@@ -50,10 +50,30 @@ namespace CodeLouisvilleUnitTestProject
                 List<Result> models = resObject.Results.ToList();
                 bool isValid = models.Any(x => x.Model_Name == base.Model);
                 return isValid;
-            }
-            
+            }            
         }
 
+        public void AddPassengers(int passengers)
+        {
+            if (passengers > 0)
+            {
+                NumberOfPassengers += passengers;
+                base.MilesPerGallon -= passengers * 0.2;
+            }            
+        }
 
+        public void RemovePassengers(int passengers)
+        {
+            if (passengers > 0)
+            {
+                int removed = passengers;
+                if (passengers > NumberOfPassengers)
+                {
+                    removed = NumberOfPassengers;
+                }
+                NumberOfPassengers -= removed;
+                base.MilesPerGallon += removed * 0.2;
+            }
+        }
     }
 }
