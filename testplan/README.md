@@ -22,9 +22,9 @@ https://www.belk.com/ is online shopping website for the department store, Belk.
 - Chrome Browser: Version 105.0.5195.127 (Official Build) (64-bit)
 
 ### Bug Found:
-- TC3: Zoom-On-Hover-Off-Bug
-- TC7: Zoom-Hover-Scroll-Bug
-- TC10: Zoom-Categories-Bug 
+- [TC3: Zoom-On-Hover-Off-Bug](####TC3:-Zoom-On-Hover-Off-Bug)
+- [TC7: Zoom-Hover-Scroll-Bug](####TC7:-Zoom-Hover-Scroll-Bug)
+- [TC10: Zoom-Categories-Bug](####TC10:-Zoom-Categories-Bug)
 
 Please review the test cases listed above to learn how to replicate these bugs. 
 
