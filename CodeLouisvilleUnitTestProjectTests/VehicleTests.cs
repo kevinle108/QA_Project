@@ -67,10 +67,9 @@ namespace CodeLouisvilleUnitTestProjectTests
         {
             Vehicle vehicle = new Vehicle(4, 15, "Toyota", "Avalon", 30);
 
-            vehicle.AddGas();
-            vehicle.Drive(90);
+            vehicle.AddGas(7.5f);
 
-            vehicle.GasLevel.Should().Be("80%");
+            vehicle.GasLevel.Should().Be("50%");
         }
 
         //Verify that the AddGas method with a parameter will throw
